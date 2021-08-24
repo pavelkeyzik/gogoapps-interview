@@ -8,7 +8,6 @@ function AuthorizedLayout(props: PropsWithChildren<unknown>) {
     <>
       <Header>
         <Header.Logo href="/">GogoApps</Header.Logo>
-        <Header.Item full />
         <Header.Item>
           <Input placeholder="Search..." />
         </Header.Item>
@@ -22,7 +21,7 @@ const Main = styled.main(
   ({ theme }) => css`
     display: flex;
     flex-direction: column;
-    padding: ${theme.space[4]} ${theme.space[3]};
+    padding: ${theme.space[4]} ${theme.space[5]};
   `
 );
 

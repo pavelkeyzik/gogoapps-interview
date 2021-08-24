@@ -16,6 +16,7 @@ type SpaceType = {
   2: string;
   3: string;
   4: string;
+  5: string;
 };
 
 type Theme = {
@@ -59,6 +60,7 @@ const defaultTheme: Theme = {
     2: "8px",
     3: "16px",
     4: "24px",
+    5: "48px",
   },
   colors: {
     primary: tokens.primary,
@@ -73,7 +75,7 @@ const defaultTheme: Theme = {
       background: tokens.gray[90],
     },
     input: {
-      background: tokens.gray[80],
+      background: tokens.gray[100],
       color: tokens.gray[10],
     },
     aside: {
