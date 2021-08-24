@@ -14,10 +14,17 @@ const HeaderRoot = styled.header(
   `
 );
 
-const HeaderLogo = styled.a`
-  font-size: 1.5em;
-  font-weight: bold;
-`;
+const HeaderLogo = styled.a(
+  ({ theme }) => css`
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: color ${theme.animation.speed};
+
+    :hover {
+      color: ${theme.colors.primary};
+    }
+  `
+);
 
 type HeaderItemProps = {
   full?: boolean; // used to fill all space in container

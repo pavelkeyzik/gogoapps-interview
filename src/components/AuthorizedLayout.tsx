@@ -22,7 +22,7 @@ const Main = styled.main(
   ({ theme }) => css`
     display: flex;
     flex-direction: column;
-    padding: ${theme.space[4]};
+    padding: ${theme.space[4]} ${theme.space[3]};
   `
 );
 

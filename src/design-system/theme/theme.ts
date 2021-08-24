@@ -1,5 +1,9 @@
 import { tokens } from "./tokens";
 
+type AnimationType = {
+  speed: string;
+};
+
 type CornerType = {
   0: string;
   1: string;
@@ -15,9 +19,11 @@ type SpaceType = {
 };
 
 type Theme = {
+  animation: AnimationType;
   space: SpaceType;
   corner: CornerType;
   colors: {
+    primary: string;
     body: {
       background: string;
       color: string;
@@ -32,10 +38,16 @@ type Theme = {
       background: string;
       color: string;
     };
+    aside: {
+      background: string;
+    };
   };
 };
 
 const defaultTheme: Theme = {
+  animation: {
+    speed: "0.2s",
+  },
   corner: {
     0: "0px",
     1: "4px",
@@ -49,6 +61,7 @@ const defaultTheme: Theme = {
     4: "24px",
   },
   colors: {
+    primary: tokens.primary,
     body: {
       background: tokens.gray[100],
       color: tokens.gray[10],
@@ -62,6 +75,9 @@ const defaultTheme: Theme = {
     input: {
       background: tokens.gray[80],
       color: tokens.gray[10],
+    },
+    aside: {
+      background: tokens.gray[90],
     },
   },
 };
