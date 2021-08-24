@@ -1,16 +1,19 @@
 import styled, { css } from "styled-components";
 
 import { VideoPlayer } from "../../components/VideoPlayer";
+import {
+  useVideoPlayerState,
+  VideoPlayerProvider,
+} from "../../core/hooks/use-video-player";
 import { WatchVideoSideBar } from "./WatchVideoSideBar";
 
 function WatchVideoPage() {
+  const state = useVideoPlayerState();
+
   return (
     <Root>
       <div>
-        <VideoPlayer
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          controls
-        />
+        <VideoPlayer src={state.link} />
         <VideoInformation>
           <b>Video Title</b>
           <span>Video Description</span>
@@ -42,4 +45,12 @@ const VideoInformation = styled.div(
   `
 );
 
-export { WatchVideoPage };
+function WatchVideoPageWithWrapper() {
+  return (
+    <VideoPlayerProvider>
+      <WatchVideoPage />
+    </VideoPlayerProvider>
+  );
+}
+
+export { WatchVideoPageWithWrapper as WatchVideoPage };

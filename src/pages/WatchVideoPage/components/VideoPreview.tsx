@@ -1,13 +1,19 @@
 import styled, { css } from "styled-components";
 
 type VideoPreviewProps = {
+  videoId: string;
   title: string;
   thumbnail: string;
+  onClick?: (videoId: string) => void;
 };
 
 function VideoPreview(props: VideoPreviewProps) {
+  function handleClick() {
+    props.onClick && props.onClick(props.videoId);
+  }
+
   return (
-    <Root>
+    <Root onClick={handleClick}>
       <ImageContainer>
         <Image src={props.thumbnail} />
       </ImageContainer>
