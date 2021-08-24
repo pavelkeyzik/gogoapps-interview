@@ -1,5 +1,11 @@
 import { tokens } from "./tokens";
 
+type CornerType = {
+  0: string;
+  1: string;
+  2: string;
+};
+
 type SpaceType = {
   0: string;
   1: string;
@@ -10,6 +16,7 @@ type SpaceType = {
 
 type Theme = {
   space: SpaceType;
+  corner: CornerType;
   colors: {
     body: {
       background: string;
@@ -21,10 +28,19 @@ type Theme = {
     header: {
       background: string;
     };
+    input: {
+      background: string;
+      color: string;
+    };
   };
 };
 
 const defaultTheme: Theme = {
+  corner: {
+    0: "0px",
+    1: "4px",
+    2: "8px",
+  },
   space: {
     0: "0px",
     1: "4px",
@@ -42,6 +58,10 @@ const defaultTheme: Theme = {
     },
     header: {
       background: tokens.gray[90],
+    },
+    input: {
+      background: tokens.gray[80],
+      color: tokens.gray[10],
     },
   },
 };

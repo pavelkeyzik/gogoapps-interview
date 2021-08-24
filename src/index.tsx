@@ -1,14 +1,15 @@
 import ReactDOM from "react-dom";
-import { Header, ThemeProvider } from "./design-system";
+import { Header, Input, ThemeProvider } from "./design-system";
 
 function Application() {
   return (
-    <div>
-      <Header>
-        <Header.Logo href="/">GogoApps</Header.Logo>
-        <Header.Item full>{/* TODO: Input */}</Header.Item>
-      </Header>
-    </div>
+    <Header>
+      <Header.Logo href="/">GogoApps</Header.Logo>
+      <Header.Item full />
+      <Header.Item>
+        <Input placeholder="Search..." />
+      </Header.Item>
+    </Header>
   );
 }
 
