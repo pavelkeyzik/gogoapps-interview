@@ -1,15 +1,14 @@
 import ReactDOM from "react-dom";
-import { Header, Input, ThemeProvider } from "./design-system";
+
+import { ThemeProvider } from "./design-system";
+import { AuthorizedLayout } from "./components/AuthorizedLayout";
+import { WatchVideoPage } from "./pages/WatchVideoPage";
 
 function Application() {
   return (
-    <Header>
-      <Header.Logo href="/">GogoApps</Header.Logo>
-      <Header.Item full />
-      <Header.Item>
-        <Input placeholder="Search..." />
-      </Header.Item>
-    </Header>
+    <AuthorizedLayout>
+      <WatchVideoPage />
+    </AuthorizedLayout>
   );
 }
 
