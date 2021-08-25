@@ -13,17 +13,31 @@ function WatchSelectedVideo() {
   }
 
   return (
-    <div>
-      <VideoPlayer src={state.link} />
-      <VideoInformation>
-        <b>{videoInformation.data.title || "Unknown"}</b>
-        <span>
-          {videoInformation.data.description || "No description providen"}
-        </span>
-      </VideoInformation>
-    </div>
+    <Root>
+      <StickyContainer>
+        <VideoPlayer src={state.link} />
+        <VideoInformation>
+          <b>{videoInformation.data.title || "Unknown"}</b>
+          <span>
+            {videoInformation.data.description || "No description providen"}
+          </span>
+        </VideoInformation>
+      </StickyContainer>
+    </Root>
   );
 }
+
+const Root = styled.div`
+  position: relative;
+  height: 100%;
+`;
+
+const StickyContainer = styled.div(
+  ({ theme }) => css`
+    position: sticky;
+    top: ${theme.space[4]};
+  `
+);
 
 const VideoInformation = styled.div(
   ({ theme }) => css`

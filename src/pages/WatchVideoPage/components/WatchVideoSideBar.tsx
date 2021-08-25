@@ -14,10 +14,6 @@ function WatchVideoSideBar() {
   const dispatch = useVideoPlayerDispatch();
 
   function selectVideo(videoId: string) {
-    // That's only for those cases when we selected video
-    // at the very bottom. I think it's better to scroll up the page
-    window.scrollTo({ top: 0 });
-
     dispatch({
       type: "CHANGE_VIDEO_ID",
       payload: {
@@ -42,8 +38,6 @@ function WatchVideoSideBar() {
   ) {
     return <div>Nothing to show you</div>;
   }
-
-  console.log(state);
 
   return (
     <VideoPreviewsGrid>
