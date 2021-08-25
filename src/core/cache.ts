@@ -1,5 +1,6 @@
 const cacheKeys = {
-  videosList: "videoList",
+  videoList: "videoList",
+  videoById: "videoById",
 };
 
 export { cacheKeys };

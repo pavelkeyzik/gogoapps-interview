@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { useVideoPlayerDispatch } from "../../core/hooks/use-video-player";
 
-import { useVideoList } from "../../core/hooks/use-videos";
+import { useVideoList } from "../../core/hooks/use-video";
 import { VideoPreview } from "./components/VideoPreview";
 
 function WatchVideoSideBar() {
@@ -25,9 +25,13 @@ function WatchVideoSideBar() {
     return <div>{String(state.error)}</div>;
   }
 
+  if (!state.data || state.data.items.length === 0) {
+    return <div>Nothing to show you...</div>;
+  }
+
   return (
     <VideoPreviewsGrid>
-      {state.data.items.map((item: any) => (
+      {state.data.items?.map((item: any) => (
         <VideoPreview
           key={item.id.videoId}
           videoId={item.id.videoId}
