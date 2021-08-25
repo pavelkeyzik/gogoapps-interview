@@ -2,13 +2,15 @@
 
 ## How to run application
 
-To run application add .env file to the root folder with this content
+To run application add `.env` file to the root folder with this content
 
 ```
 REACT_APP_YOUTUBE_API_KEY=YOUR_API_KEY
 ```
 
-And start the project with `npm start`
+And start the project with `npm run start:prod` to run with YouTube's API
+
+If you don't want to use YouTube's API you can use mocked data, so you event don't need `.env` file. Just run `npm run start:dev` command and that's it.
 
 ## Some notes about project
 

@@ -1,9 +1,12 @@
+import React from "react";
 import styled, { css } from "styled-components";
 import { useVideoPlayerDispatch } from "../../../core/hooks/use-video-player";
 
 import { useVideoList } from "../../../core/hooks/use-video";
 import { VideoPreview } from "./VideoPreview";
 import { useVideosSearchState } from "../../../core/hooks/use-video/search";
+import { Spinner } from "../../../design-system/Spinner";
+import { Button } from "../../../design-system/Button";
 
 function WatchVideoSideBar() {
   const searchState = useVideosSearchState();
@@ -11,6 +14,10 @@ function WatchVideoSideBar() {
   const dispatch = useVideoPlayerDispatch();
 
   function selectVideo(videoId: string) {
+    // That's only for those cases when we selected video
+    // at the very bottom. I think it's better to scroll up the page
+    window.scrollTo({ top: 0 });
+
     dispatch({
       type: "CHANGE_VIDEO_ID",
       payload: {
@@ -20,28 +27,44 @@ function WatchVideoSideBar() {
   }
 
   if (state.isLoading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   if (state.error) {
     return <div>{String(state.error)}</div>;
   }
 
-  if (!state.data || state.data.items.length === 0) {
+  if (
+    !state.data ||
+    !state.data.pages ||
+    state.data.pages.length === 0 ||
+    state.data.pages[0]?.items.length === 0
+  ) {
     return <div>Nothing to show you</div>;
   }
 
+  console.log(state);
+
   return (
     <VideoPreviewsGrid>
-      {state.data.items?.map((item: any) => (
-        <VideoPreview
-          key={item.id.videoId}
-          videoId={item.id.videoId}
-          title={item.snippet.title}
-          thumbnail={item.snippet.thumbnails.default.url}
-          onClick={selectVideo}
-        />
+      {state.data.pages.map((page) => (
+        <React.Fragment key={page?.nextPageToken}>
+          {page?.items.map((item) => (
+            <VideoPreview
+              key={item.id.videoId}
+              videoId={item.id.videoId}
+              title={item.snippet.title}
+              thumbnail={item.snippet.thumbnails.default.url}
+              onClick={selectVideo}
+            />
+          ))}
+        </React.Fragment>
       ))}
+      {state.hasNextPage ? (
+        <Button onClick={() => state.fetchNextPage()}>
+          {state.isFetchingNextPage ? "Loading more..." : "Load more"}
+        </Button>
+      ) : null}
     </VideoPreviewsGrid>
   );
 }

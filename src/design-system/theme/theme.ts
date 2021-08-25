@@ -42,6 +42,18 @@ type Theme = {
     box: {
       background: string;
     };
+    spinner: {
+      primaryLine: string;
+      secondaryLine: string;
+    };
+    button: {
+      secondary: {
+        border: string;
+        borderHover: string;
+        color: string;
+        colorHover: string;
+      };
+    };
   };
 };
 
@@ -80,6 +92,18 @@ const defaultTheme: Theme = {
     },
     box: {
       background: tokens.gray[90],
+    },
+    spinner: {
+      primaryLine: tokens.gray[20],
+      secondaryLine: tokens.gray[60],
+    },
+    button: {
+      secondary: {
+        border: tokens.gray[50],
+        borderHover: tokens.red[50],
+        color: tokens.gray[20],
+        colorHover: tokens.red[50],
+      },
     },
   },
 };

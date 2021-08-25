@@ -33,6 +33,7 @@ async function getMockedDataAsPromise<T>(mockedData: T) {
 
 async function getVideosList(params: {
   search: string | null;
+  pageToken?: string;
 }): Promise<typeof getVideosListJSON | null> {
   if (params.search === null) {
     return null;
@@ -43,7 +44,11 @@ async function getVideosList(params: {
   }
 
   const promise = await fetch(
-    `${apiConfig.API_BASE_URL}/search?key=${apiConfig.API_KEY}&q=${params.search}&part=snippet&type=video`
+    `${apiConfig.API_BASE_URL}/search?key=${apiConfig.API_KEY}&q=${
+      params.search
+    }&part=snippet&type=video${
+      params.pageToken ? `&pageToken=${params.pageToken}` : ""
+    }`
   );
 
   return await promise.json();

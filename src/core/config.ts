@@ -1,5 +1,5 @@
 const config = {
-  isDevelopment: process.env.NODE_ENV !== "production",
+  isDevelopment: process.env.REACT_APP_TYPE !== "production",
 };
 
 export { config };
