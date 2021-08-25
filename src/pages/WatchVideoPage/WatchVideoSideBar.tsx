@@ -3,9 +3,11 @@ import { useVideoPlayerDispatch } from "../../core/hooks/use-video-player";
 
 import { useVideoList } from "../../core/hooks/use-video";
 import { VideoPreview } from "./components/VideoPreview";
+import { useVideosSearchState } from "../../core/hooks/use-video/search";
 
 function WatchVideoSideBar() {
-  const state = useVideoList();
+  const searchState = useVideosSearchState();
+  const state = useVideoList({ search: searchState.search });
   const dispatch = useVideoPlayerDispatch();
 
   function selectVideo(videoId: string) {

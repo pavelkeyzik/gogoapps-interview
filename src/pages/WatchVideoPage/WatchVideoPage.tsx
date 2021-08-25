@@ -7,9 +7,7 @@ import { WatchVideoSideBar } from "./WatchVideoSideBar";
 function WatchVideoPage() {
   return (
     <Root>
-      <div>
-        <WatchSelectedVideo />
-      </div>
+      <WatchSelectedVideo />
       <WatchVideoSideBar />
     </Root>
   );

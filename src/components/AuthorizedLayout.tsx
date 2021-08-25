@@ -1,7 +1,8 @@
 import { PropsWithChildren } from "react";
 import styled, { css } from "styled-components";
 
-import { Header, Input } from "../design-system";
+import { SearchVideoInput } from "./SearchVideoInput";
+import { Header } from "../design-system";
 
 function AuthorizedLayout(props: PropsWithChildren<unknown>) {
   return (
@@ -9,7 +10,7 @@ function AuthorizedLayout(props: PropsWithChildren<unknown>) {
       <Header>
         <Header.Logo href="/">GogoApps</Header.Logo>
         <Header.Item>
-          <Input placeholder="Search..." />
+          <SearchVideoInput />
         </Header.Item>
       </Header>
       <Main>{props.children}</Main>
