@@ -1,7 +1,9 @@
-import React from "react";
-import { useContext } from "react";
-import { useReducer } from "react";
-import { createContext, PropsWithChildren } from "react";
+import React, {
+  useContext,
+  useReducer,
+  createContext,
+  PropsWithChildren,
+} from "react";
 
 type StateType = {
   videoId: string;

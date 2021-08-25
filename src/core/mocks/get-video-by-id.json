@@ -1,0 +1,65 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "HcOV8QJ4V-e3oWV9b2767pgpOJw",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "eZC2pG5bKkXS3sd4899nf6rS4Zg",
+      "id": "OnRDo6Kg8LY",
+      "snippet": {
+        "publishedAt": "2020-02-06T05:41:15Z",
+        "channelId": "UCvuShrOlcCtLoJ7gEUwB0FA",
+        "title": "Самое первое видео про SUBARU TEAM BELARUS (2015)",
+        "description": "Да! Это самый первое смонтированное видео от нашего клуба и снято оно было в январе 2015-ого года. Пусть видео и не наивысшего качества, но главное - это эмоции, которые принесла нам эта встреча.\n\nТрек: Borgore & Sikdope – Unicorn Zombie Apocalypse (Vladisse Festival Trap Remix)",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OnRDo6Kg8LY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OnRDo6Kg8LY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OnRDo6Kg8LY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/OnRDo6Kg8LY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/OnRDo6Kg8LY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "SUBARU TEAM BELARUS",
+        "tags": ["subaruteambelarus", "subaru", "субару"],
+        "categoryId": "2",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "Самое первое видео про SUBARU TEAM BELARUS (2015)",
+          "description": "Да! Это самый первое смонтированное видео от нашего клуба и снято оно было в январе 2015-ого года. Пусть видео и не наивысшего качества, но главное - это эмоции, которые принесла нам эта встреча.\n\nТрек: Borgore & Sikdope – Unicorn Zombie Apocalypse (Vladisse Festival Trap Remix)"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT2M3S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

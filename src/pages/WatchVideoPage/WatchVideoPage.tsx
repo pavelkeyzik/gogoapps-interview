@@ -33,8 +33,10 @@ const SignleContent = styled.div(
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: ${theme.space[4]};
+    height: 100%;
   `
 );
 
@@ -43,6 +45,8 @@ const Grid = styled.div(
     display: grid;
     grid-template-columns: 8fr 4fr;
     grid-gap: ${theme.space[4]};
+    align-items: flex-start;
+    height: 100%;
   `
 );
 

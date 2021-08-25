@@ -5,8 +5,7 @@ const HeaderRoot = styled.header(
     display: flex;
     align-items: center;
     background: ${theme.colors.box.background};
-    min-height: 80px;
-    padding: ${theme.space[0]} ${theme.space[5]};
+    padding: ${theme.space[3]} ${theme.space[5]};
 
     > *:not(:last-child) {
       margin-right: ${theme.space[4]};

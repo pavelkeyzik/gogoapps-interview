@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 function VideoPlayer(props: ComponentPropsWithRef<"iframe">) {
   return (
@@ -9,12 +9,15 @@ function VideoPlayer(props: ComponentPropsWithRef<"iframe">) {
   );
 }
 
-const Iframe = styled.iframe`
-  display: flex;
-  width: 100%;
-  flex-grow: 1;
-  border: 0;
-`;
+const Iframe = styled.iframe(
+  ({ theme }) => css`
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    border: 0;
+    background: ${theme.colors.box.background};
+  `
+);
 
 const Wrapper = styled.div`
   position: relative;

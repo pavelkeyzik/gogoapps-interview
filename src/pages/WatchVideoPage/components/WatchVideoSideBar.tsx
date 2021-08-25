@@ -48,8 +48,12 @@ function WatchVideoSideBar() {
 
 const VideoPreviewsGrid = styled.div(
   ({ theme }) => css`
-    display: grid;
-    grid-gap: ${theme.space[1]};
+    display: flex;
+    flex-direction: column;
+
+    > *:not(:last-child) {
+      margin-bottom: ${theme.space[1]};
+    }
   `
 );
 

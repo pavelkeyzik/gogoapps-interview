@@ -6,7 +6,7 @@ import { Header } from "../design-system";
 
 function AuthorizedLayout(props: PropsWithChildren<unknown>) {
   return (
-    <>
+    <Root>
       <Header>
         <Header.Logo href="/">GogoApps</Header.Logo>
         <Header.Item>
@@ -14,9 +14,15 @@ function AuthorizedLayout(props: PropsWithChildren<unknown>) {
         </Header.Item>
       </Header>
       <Main>{props.children}</Main>
-    </>
+    </Root>
   );
 }
+
+const Root = styled.div`
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  min-height: 100vh;
+`;
 
 const Main = styled.main(
   ({ theme }) => css`

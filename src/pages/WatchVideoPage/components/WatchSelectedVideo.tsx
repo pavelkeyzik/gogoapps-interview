@@ -45,6 +45,7 @@ const CenterBox = styled.div(
     align-items: center;
     background: ${theme.colors.box.background};
     color: ${theme.colors.text.secondary};
+    padding: ${theme.space[4]};
   `
 );
 
