@@ -15,11 +15,6 @@ import getVideosListJSON from "./mocks/get-videos-list.json";
 import getVideoByIdJSON from "./mocks/get-video-by-id.json";
 import { config } from "./config";
 
-const apiConfig = {
-  API_BASE_URL: "https://www.googleapis.com/youtube/v3",
-  API_KEY: process.env.REACT_APP_YOUTUBE_API_KEY,
-};
-
 /**
  * Just a little helper to add delay for mocked data
  */
@@ -44,7 +39,7 @@ async function getVideosList(params: {
   }
 
   const promise = await fetch(
-    `${apiConfig.API_BASE_URL}/search?key=${apiConfig.API_KEY}&q=${
+    `${config.api.youtube.baseURL}/search?key=${config.api.youtube.key}&q=${
       params.search
     }&part=snippet&type=video${
       params.pageToken ? `&pageToken=${params.pageToken}` : ""
@@ -66,7 +61,7 @@ async function getVideoById(params: {
   }
 
   const promise = await fetch(
-    `${apiConfig.API_BASE_URL}/videos?key=${apiConfig.API_KEY}&id=${params.id}&part=snippet`
+    `${config.api.youtube.baseURL}/videos?key=${config.api.youtube.key}&id=${params.id}&part=snippet`
   );
 
   return await promise.json();

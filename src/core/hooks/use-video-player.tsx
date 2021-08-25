@@ -5,6 +5,8 @@ import React, {
   PropsWithChildren,
 } from "react";
 
+import { config } from "../config";
+
 type StateType = {
   videoId: string;
   link: string;
@@ -25,7 +27,7 @@ function reducer(state: StateType, action: ActionType): StateType {
       return {
         ...state,
         videoId: action.payload.videoId,
-        link: `https://www.youtube.com/embed/${action.payload.videoId}`,
+        link: config.getYouTubeEmbededUrlByVideoId(action.payload.videoId),
       };
     }
     default:
