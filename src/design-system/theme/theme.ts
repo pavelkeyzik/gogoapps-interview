@@ -27,19 +27,19 @@ type Theme = {
     primary: string;
     body: {
       background: string;
-      color: string;
     };
     link: {
       color: string;
-    };
-    header: {
-      background: string;
     };
     input: {
       background: string;
       color: string;
     };
-    aside: {
+    text: {
+      primary: string;
+      secondary: string;
+    };
+    box: {
       background: string;
     };
   };
@@ -66,19 +66,19 @@ const defaultTheme: Theme = {
     primary: tokens.primary,
     body: {
       background: tokens.gray[100],
-      color: tokens.gray[10],
     },
     link: {
       color: tokens.gray[10],
-    },
-    header: {
-      background: tokens.gray[90],
     },
     input: {
       background: tokens.gray[100],
       color: tokens.gray[10],
     },
-    aside: {
+    text: {
+      primary: tokens.gray[10],
+      secondary: tokens.gray[30],
+    },
+    box: {
       background: tokens.gray[90],
     },
   },

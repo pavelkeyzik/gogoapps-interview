@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
-import { useVideoPlayerDispatch } from "../../core/hooks/use-video-player";
+import { useVideoPlayerDispatch } from "../../../core/hooks/use-video-player";
 
-import { useVideoList } from "../../core/hooks/use-video";
-import { VideoPreview } from "./components/VideoPreview";
-import { useVideosSearchState } from "../../core/hooks/use-video/search";
+import { useVideoList } from "../../../core/hooks/use-video";
+import { VideoPreview } from "./VideoPreview";
+import { useVideosSearchState } from "../../../core/hooks/use-video/search";
 
 function WatchVideoSideBar() {
   const searchState = useVideosSearchState();
@@ -28,7 +28,7 @@ function WatchVideoSideBar() {
   }
 
   if (!state.data || state.data.items.length === 0) {
-    return <div>Nothing to show you...</div>;
+    return <div>Nothing to show you</div>;
   }
 
   return (

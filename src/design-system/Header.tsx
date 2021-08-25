@@ -4,7 +4,7 @@ const HeaderRoot = styled.header(
   ({ theme }) => css`
     display: flex;
     align-items: center;
-    background: ${theme.colors.header.background};
+    background: ${theme.colors.box.background};
     min-height: 80px;
     padding: ${theme.space[0]} ${theme.space[5]};
 
@@ -19,9 +19,10 @@ const HeaderLogo = styled.a(
     font-size: 1.5em;
     font-weight: bold;
     transition: color ${theme.animation.speed};
+    color: ${theme.colors.primary};
 
     :hover {
-      color: ${theme.colors.primary};
+      color: ${theme.colors.link.color};
     }
   `
 );

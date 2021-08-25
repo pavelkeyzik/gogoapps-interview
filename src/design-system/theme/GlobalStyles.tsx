@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle(
       line-height: 1.75;
       font-family: "Poppins", sans-serif;
       background: ${theme.colors.body.background};
-      color: ${theme.colors.body.color};
+      color: ${theme.colors.text.primary};
     }
 
     a {
@@ -28,6 +28,15 @@ const GlobalStyles = createGlobalStyle(
       :hover {
         text-decoration: underline;
       }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
     }
   `
 );
