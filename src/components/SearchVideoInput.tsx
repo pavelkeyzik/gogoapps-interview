@@ -1,6 +1,7 @@
 import { KeyboardEvent, useState } from "react";
 import { ChangeEvent } from "react";
-import { useVideosSearchDispatch } from "../core/hooks/use-video/search";
+
+import { useVideosSearchDispatch } from "../core";
 import { Input } from "../design-system";
 
 function SearchVideoInput() {

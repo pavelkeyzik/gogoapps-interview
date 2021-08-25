@@ -2,12 +2,13 @@ import React from "react";
 import styled, { css, useTheme } from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
-import { useVideoPlayerDispatch } from "../../../core/hooks/use-video-player";
-import { useVideoList } from "../../../core/hooks/use-video";
+import { Button, Spinner } from "../../../design-system";
+import {
+  useVideoPlayerDispatch,
+  useVideoList,
+  useVideosSearchState,
+} from "../../../core";
 import { VideoPreview } from "./VideoPreview";
-import { useVideosSearchState } from "../../../core/hooks/use-video/search";
-import { Spinner } from "../../../design-system/Spinner";
-import { Button } from "../../../design-system/Button";
 
 function WatchVideoSideBar() {
   const theme = useTheme();

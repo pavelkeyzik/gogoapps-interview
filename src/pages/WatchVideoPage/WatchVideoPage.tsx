@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { VideoPlayerProvider } from "../../core/hooks/use-video-player";
-import { useVideosSearchState } from "../../core/hooks/use-video/search";
+import { VideoPlayerProvider, useVideosSearchState } from "../../core";
 import { WatchSelectedVideo } from "./components/WatchSelectedVideo";
 import { WatchVideoSideBar } from "./components/WatchVideoSideBar";
 

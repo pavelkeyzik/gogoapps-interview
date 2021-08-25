@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { VideoPlayer } from "../../../components/VideoPlayer";
-import { useVideoById } from "../../../core/hooks/use-video";
-import { useVideoPlayerState } from "../../../core/hooks/use-video-player";
+import { useVideoById, useVideoPlayerState } from "../../../core";
 
 function WatchSelectedVideo() {
   const state = useVideoPlayerState();

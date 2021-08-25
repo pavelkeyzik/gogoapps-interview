@@ -2,10 +2,9 @@ import ReactDOM from "react-dom";
 import { QueryClientProvider } from "react-query";
 
 import { ThemeProvider } from "./design-system";
+import { client, VideosSearchProvider } from "./core";
 import { AuthorizedLayout } from "./components/AuthorizedLayout";
 import { WatchVideoPage } from "./pages/WatchVideoPage";
-import { client } from "./core/client";
-import { VideosSearchProvider } from "./core/hooks/use-video/search";
 
 function Application() {
   return (
