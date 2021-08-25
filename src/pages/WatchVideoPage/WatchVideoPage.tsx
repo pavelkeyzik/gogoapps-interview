@@ -43,10 +43,15 @@ const SignleContent = styled.div(
 const Grid = styled.div(
   ({ theme }) => css`
     display: grid;
-    grid-template-columns: 8fr 4fr;
+    grid-template-rows: min-content;
     grid-gap: ${theme.space[4]};
     align-items: flex-start;
     height: 100%;
+
+    @media (min-width: ${theme.breakpoints[0]}) {
+      display: grid;
+      grid-template-columns: 8fr 4fr;
+    }
   `
 );
 

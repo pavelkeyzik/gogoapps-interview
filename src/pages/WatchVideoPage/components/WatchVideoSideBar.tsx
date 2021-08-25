@@ -1,7 +1,8 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { useVideoPlayerDispatch } from "../../../core/hooks/use-video-player";
+import styled, { css, useTheme } from "styled-components";
+import { useMediaQuery } from "react-responsive";
 
+import { useVideoPlayerDispatch } from "../../../core/hooks/use-video-player";
 import { useVideoList } from "../../../core/hooks/use-video";
 import { VideoPreview } from "./VideoPreview";
 import { useVideosSearchState } from "../../../core/hooks/use-video/search";
@@ -9,11 +10,29 @@ import { Spinner } from "../../../design-system/Spinner";
 import { Button } from "../../../design-system/Button";
 
 function WatchVideoSideBar() {
+  const theme = useTheme();
   const searchState = useVideosSearchState();
   const state = useVideoList({ search: searchState.search });
   const dispatch = useVideoPlayerDispatch();
 
+  const isDesktop = useMediaQuery({
+    query: `(min-width: ${theme.breakpoints[0]})`,
+  });
+
   function selectVideo(videoId: string) {
+    // A code bellow adds scroll to top only if it's not Desktop as on mobile devices
+    // the search list is too long to scroll and there is no way to add
+    // position: sticky as its one column grid. Yeah! We can split the screen
+    // in two parts but I have no time to do this. So, I hope it's okay to do this way
+
+    if (!isDesktop) {
+      window.scrollTo({
+        top: 0,
+        // Works only in Chrome. Can fix this with install additional library with polyfill
+        behavior: "smooth",
+      });
+    }
+
     dispatch({
       type: "CHANGE_VIDEO_ID",
       payload: {
@@ -69,7 +88,13 @@ const VideoPreviewsGrid = styled.div(
     flex-direction: column;
 
     > *:not(:last-child) {
-      margin-bottom: ${theme.space[1]};
+      margin-bottom: ${theme.space[4]};
+    }
+
+    @media (min-width: ${theme.breakpoints[0]}) {
+      > *:not(:last-child) {
+        margin-bottom: ${theme.space[1]};
+      }
     }
   `
 );

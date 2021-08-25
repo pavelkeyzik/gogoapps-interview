@@ -3,12 +3,24 @@ import styled, { css } from "styled-components";
 const HeaderRoot = styled.header(
   ({ theme }) => css`
     display: flex;
+    flex-direction: column;
     align-items: center;
     background: ${theme.colors.box.background};
-    padding: ${theme.space[3]} ${theme.space[5]};
+    padding: ${theme.space[3]} ${theme.space[3]};
 
     > *:not(:last-child) {
-      margin-right: ${theme.space[4]};
+      margin-bottom: ${theme.space[4]};
+    }
+
+    @media (min-width: ${theme.breakpoints[0]}) {
+      padding: ${theme.space[3]} ${theme.space[5]};
+      flex-direction: row;
+      height: 80px;
+
+      > *:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: ${theme.space[4]};
+      }
     }
   `
 );

@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle(
     @import url("https://fonts.googleapis.com/css?family=Poppins:400");
 
     html {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     * {
@@ -37,6 +37,12 @@ const GlobalStyles = createGlobalStyle(
     h5,
     h6 {
       margin: 0;
+    }
+
+    @media (min-width: ${theme.breakpoints[0]}) {
+      html {
+        font-size: 18px;
+      }
     }
   `
 );

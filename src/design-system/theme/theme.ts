@@ -1,5 +1,9 @@
 import { tokens } from "./tokens";
 
+type BreakpointsType = {
+  0: string;
+};
+
 type AnimationType = {
   speed: string;
 };
@@ -20,6 +24,7 @@ type SpaceType = {
 };
 
 type Theme = {
+  breakpoints: BreakpointsType;
   animation: AnimationType;
   space: SpaceType;
   corner: CornerType;
@@ -58,6 +63,9 @@ type Theme = {
 };
 
 const defaultTheme: Theme = {
+  breakpoints: {
+    0: "544px",
+  },
   animation: {
     speed: "0.2s",
   },
