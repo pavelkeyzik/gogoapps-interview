@@ -20,6 +20,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "start": "npm run start:dev",
     "start:dev": "cross-env REACT_APP_TYPE=development react-scripts start",
     "start:prod": "cross-env REACT_APP_TYPE=production react-scripts start",
     "build": "cross-env REACT_APP_TYPE=production react-scripts build",

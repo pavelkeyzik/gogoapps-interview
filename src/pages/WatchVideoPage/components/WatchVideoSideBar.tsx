@@ -54,12 +54,7 @@ function WatchVideoSideBar() {
     return <div>{String(state.error)}</div>;
   }
 
-  if (
-    !state.data ||
-    !state.data.pages ||
-    state.data.pages.length === 0 ||
-    state.data.pages[0]?.items.length === 0
-  ) {
+  if (state.isNothingToShow || !state.data) {
     return <div>Nothing to show you</div>;
   }
 
