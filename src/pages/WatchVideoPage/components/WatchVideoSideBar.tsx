@@ -42,7 +42,11 @@ function WatchVideoSideBar() {
   }
 
   if (state.isLoading) {
-    return <Spinner />;
+    return (
+      <Center>
+        <Spinner />
+      </Center>
+    );
   }
 
   if (state.error) {
@@ -81,6 +85,11 @@ function WatchVideoSideBar() {
     </VideoPreviewsGrid>
   );
 }
+
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const VideoPreviewsGrid = styled.div(
   ({ theme }) => css`
