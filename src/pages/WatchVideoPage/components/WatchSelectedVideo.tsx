@@ -17,9 +17,9 @@ function WatchSelectedVideo() {
         <VideoPlayer src={state.link} />
         <VideoInformation>
           <b>{videoInformation.data.title || "Unknown"}</b>
-          <span>
+          <Description>
             {videoInformation.data.description || "No description providen"}
-          </span>
+          </Description>
         </VideoInformation>
       </StickyContainer>
     </Root>
@@ -61,5 +61,9 @@ const CenterBox = styled.div(
     padding: ${theme.space[4]};
   `
 );
+
+const Description = styled.div`
+  word-break: break-word;
+`;
 
 export { WatchSelectedVideo };
